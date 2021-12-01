@@ -1,0 +1,16 @@
+{
+  "resourceName": "storage",
+  "policyUUID": "1356c7f6",
+  "bucketName": "ptgftxdevbuilds",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [],
+  "groupAccess": {
+    "Admins": [
+      "READ"
+    ],
+    "Readers": [
+      "READ"
+    ]
+  }
+}
