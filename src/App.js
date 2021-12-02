@@ -20,7 +20,21 @@ class App extends Component {
           <p>
             Welcome to the Protagonist Studios Download Portal!
           </p>
-          <button onClick={download()}>Latest Android Build</button>
+          <table class="tg">
+          <tbody>
+          <tr>
+            <td class="tg-w5nv">Cyball - Windows (latest) <br />
+            <button onClick={downloadWindows()}>Download (zip)</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-w5nv">Cyball - Android (latest)<br />
+            <button onClick={downloadAndroid()}>Download (zip)</button>
+            </td>
+          </tr>
+          </tbody>
+          </table>
+          
         </header>
       </div>
     );
@@ -44,9 +58,14 @@ export function downloadBlob(blob, filename) {
 }
 
 // usage
-async function download() {
+async function downloadAndroid() {
   const result = await Storage.get(`Cyball-Android-debug.zip`, { download: true }, { contentType: "application/zip"});
-  downloadBlob(result.Body, 'filename');
+  downloadBlob(result.Body, 'Cyball-Android-debug.zip');
+}
+
+async function downloadWindows() {
+  const result = await Storage.get(`Cyball-Windows-debug.zip`, { download: true }, { contentType: "application/zip"});
+  downloadBlob(result.Body, 'Cyball-Windows-debug.zip');
 }
 
 export default withAuthenticator(App);
