@@ -18,23 +18,10 @@ class App extends Component {
         <header className="App-header">
           { /* <img src={logo} className="App-logo" alt="logo" />  */ }
           <p>
-            Welcome to the Protagonist Studios Download Portal!
+            Protagonist Studios Download Portal
           </p>
-          <table class="tg">
-          <tbody>
-          <tr>
-            <td class="tg-w5nv">Cyball - Windows (latest) <br />
-            <button onClick={downloadWindows()}>Download (zip)</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="tg-w5nv">Cyball - Android (latest)<br />
-            <button onClick={downloadAndroid()}>Download (zip)</button>
-            </td>
-          </tr>
-          </tbody>
-          </table>
-          
+          <button className="DefButton" onClick={downloadWindows()}>Cyball Windows (zip)</button><br />
+          <button className="DefButton" onClick={downloadAndroid()}>Cyball Android (zip)</button>
         </header>
       </div>
     );
