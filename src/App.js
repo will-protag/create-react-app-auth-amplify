@@ -20,8 +20,8 @@ class App extends Component {
           <p>
             Protagonist Studios Download Portal
           </p>
-          <button className="DefButton" onClick={downloadWindows()}>Cyball Windows (zip)</button><br />
-          <button className="DefButton" onClick={downloadAndroid()}>Cyball Android (zip)</button>
+          <button className="DefButton" onClick={ () => downloadWindows()}>Cyball Windows (zip)</button><br />
+          <button className="DefButton" onClick={ () => downloadAndroid()}>Cyball Android (zip)</button>
         </header>
       </div>
     );
