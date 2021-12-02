@@ -20,9 +20,7 @@ class App extends Component {
           <p>
             Welcome to the Protagonist Studios Download Portal!
           </p>
-          <li>
-          <a href={ 'downloadBlob' }>"Download Latest Android Build"</a>
-          </li>
+          <button onClick={downloadBlob()}>Latest Android Build</button>
         </header>
       </div>
     );
