@@ -6,9 +6,9 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import aws_exports from './aws-exports';
 import Amplify, { Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { Button, ButtonGroup } from '@aws-amplify/ui-react';
-import { AmplifyProvider } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
+// import { Button, ButtonGroup } from '@aws-amplify/ui-react';
+// import { AmplifyProvider } from '@aws-amplify/ui-react';
+// import '@aws-amplify/ui-react/styles.css';
 Amplify.configure(awsconfig);
 Amplify.configure(aws_exports);
 
@@ -22,13 +22,13 @@ class App extends Component {
           <p>
             Protagonist Studios Download Portal
           </p>
-          {/* <button className="DefButton" onClick={ () => downloadWindows()}>Cyball Windows (zip)</button><br /> */}
-          {/* <button className="DefButton" onClick={ () => downloadAndroid()}>Cyball Android (zip)</button> */}
-          <Button onClick={() => alert('👋 Welcome!')}>Click me</Button><br />
+          <button className="DefButton" onClick={ () => downloadWindows()}>Cyball Windows (zip)</button><br />
+          <button className="DefButton" onClick={ () => downloadAndroid()}>Cyball Android (zip)</button>
+          {/* <Button onClick={() => alert('👋 Welcome!')}>Click me</Button><br />
           <ButtonGroup direction="column">
           <Button>This is a test</Button>
           <Button>This is also a test 🎉</Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
         </header>
       </div>
     );
