@@ -7,6 +7,7 @@ import aws_exports from './aws-exports';
 import Amplify, { Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { Button, ButtonGroup } from '@aws-amplify/ui-react';
+import { AmplifyProvider } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 Amplify.configure(awsconfig);
 Amplify.configure(aws_exports);
