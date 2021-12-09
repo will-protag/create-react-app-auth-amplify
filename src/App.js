@@ -53,7 +53,13 @@ export function downloadBlob(blob, filename) {
 
 // usage
 async function downloadAndroid() {
-  const result = await Storage.get(`Cyball-Android-debug.zip`, { download: true }, { contentType: "application/zip"});
+  const result = await Storage.get(`Cyball-Android-debug.zip`, { 
+    download: true, 
+    contentType: "application/zip",
+    progressCallback(progress) {
+        console.log(`Downloaded: ${progress.loaded}/${progress.total}`);
+    }
+  });
   downloadBlob(result.Body, 'Cyball-Android-debug.zip');
 }
 
