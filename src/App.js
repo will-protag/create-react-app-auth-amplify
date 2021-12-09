@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { withAuthenticator, AmplifySignOut, Button, ButtonGroup } from '@aws-amplify/ui-react'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 // import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
 import Amplify, { Storage } from 'aws-amplify';
 import awsconfig from './aws-exports';
+// import { Button, ButtonGroup } from '@aws-amplify/ui-react';
+// import { AmplifyProvider } from '@aws-amplify/ui-react';
 // import '@aws-amplify/ui-react/styles.css';
 Amplify.configure(awsconfig);
 Amplify.configure(aws_exports);
@@ -22,11 +24,11 @@ class App extends Component {
           </p>
           <button className="DefButton" onClick={ () => downloadWindows()}>Cyball Windows (zip)</button><br />
           <button className="DefButton" onClick={ () => downloadAndroid()}>Cyball Android (zip)</button>
-          <Button onClick={() => alert('👋 Welcome!')}>Click me</Button><br />
+          {/* <Button onClick={() => alert('👋 Welcome!')}>Click me</Button><br />
           <ButtonGroup direction="column">
           <Button>This is a test</Button>
           <Button>This is also a test 🎉</Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
         </header>
       </div>
     );
@@ -51,19 +53,19 @@ export function downloadBlob(blob, filename) {
 
 // usage
 async function downloadAndroid() {
-  const result = await Storage.get(`Cyball-Android-debug.zip`, { 
+  const result = await Storage.get(`Cyball-Android-release.zip`, { 
     download: true, 
     contentType: "application/zip",
     progressCallback(progress) {
         console.log(`Downloaded: ${progress.loaded}/${progress.total}`);
     }
   });
-  downloadBlob(result.Body, 'Cyball-Android-debug.zip');
+  downloadBlob(result.Body, 'Cyball-Android-release.zip');
 }
 
 async function downloadWindows() {
-  const result = await Storage.get(`Cyball-Windows-debug.zip`, { download: true }, { contentType: "application/zip"});
-  downloadBlob(result.Body, 'Cyball-Windows-debug.zip');
+  const result = await Storage.get(`Cyball-Windows-release.zip`, { download: true }, { contentType: "application/zip"});
+  downloadBlob(result.Body, 'Cyball-Windows-release.zip');
 }
 
 export default withAuthenticator(App);
