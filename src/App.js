@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 // import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
 import Amplify, { Storage } from 'aws-amplify';
@@ -79,4 +79,3 @@ async function downloadWindows() {
 }
 
 export default withAuthenticator(App);
-export {Admin};
