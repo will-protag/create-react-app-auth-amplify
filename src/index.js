@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Amplify from 'aws-amplify'; // new
 import './index.css';
+import '@aws-amplify/ui-react/styles.css'; // new
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

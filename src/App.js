@@ -12,6 +12,16 @@ import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 Amplify.configure(aws_exports);
 
+const Admin = () => {
+  return (
+    <div className="Admin">
+      <p>
+        <Link to='/Admin'>Admin</Link>
+      </p>
+    </div>
+  );
+}
+
 class App extends Component {
   render() {
     return (
@@ -69,3 +79,4 @@ async function downloadWindows() {
 }
 
 export default withAuthenticator(App);
+export {Admin};
